@@ -11,6 +11,23 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+		p{
+		    .slide-fade-enter-active {
+		      transition: all 0.3s ease-out;
+		    }
+		    
+		    .slide-fade-leave-active {
+		      transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+		    }
+		    
+		    .slide-fade-enter-from,
+		    .slide-fade-leave-to {
+		      transform: translateX(20px);
+		      opacity: 0;
+		    }
+		}
+		</style>
     </head>
 
     <body>
@@ -35,11 +52,11 @@
 			<div id="demo">
 			<center><button @click="show = !show" class="btn btn-success">  </button>
 			  <transition-group name="slide-fade">
+				  <h1 v-if="show">
 			    <video controls="controls" autoplay="autoplay">
-				<h1 v-if="show">
 			      <source src="zyh.mp4" type="video/mp4" />
-				 </h1>
 			    </video>
+				</h1>
 			  </transition-group>
 			  </center>
 			</div>
